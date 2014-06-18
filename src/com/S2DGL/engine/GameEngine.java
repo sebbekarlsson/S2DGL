@@ -83,6 +83,9 @@ public class GameEngine extends JFrame implements Runnable, KeyListener, MouseLi
 	public static boolean vk_9 = false;
 	public static boolean vk_0 = false;
 	
+	public static boolean mouse_left = false;
+	public static boolean mouse_right = false;
+	
 
 
 
@@ -160,6 +163,7 @@ public class GameEngine extends JFrame implements Runnable, KeyListener, MouseLi
 				}
 			}
 
+			getCurrentScene().draw(g2);
 			g2.translate(-getCurrentScene().camera.x, -getCurrentScene().camera.y);
 
 			
@@ -213,7 +217,13 @@ public class GameEngine extends JFrame implements Runnable, KeyListener, MouseLi
 
 
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getButton() == 1){
+			mouse_left = true;
+		}
+		
+		if(e.getButton() == 3){
+			mouse_right = true;
+		}
 
 	}
 
@@ -221,7 +231,13 @@ public class GameEngine extends JFrame implements Runnable, KeyListener, MouseLi
 
 
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getButton() == 1){
+			mouse_left = false;
+		}
+		
+		if(e.getButton() == 3){
+			mouse_right = false;
+		}
 
 	}
 

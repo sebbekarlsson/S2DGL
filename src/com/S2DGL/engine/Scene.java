@@ -23,6 +23,7 @@ public class Scene {
 	
 	public void drawBackground(Graphics g){}
 	public void drawStaticBackground(Graphics g){}
+	public void draw(Graphics g){}
 	public void drawGUI(Graphics g){}
 	
 	public void instantiate(Instance instance){
