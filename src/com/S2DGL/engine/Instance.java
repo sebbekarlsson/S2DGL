@@ -18,6 +18,7 @@ public class Instance {
 	}
 
 	public void tick(){}
+	
 	public void draw(Graphics g){
 		if(sprite.images.get(sprite.spriteIndex) != null){
 		drawDefaultSprite(g);
@@ -40,6 +41,10 @@ public class Instance {
 
 	public void addSprite(String imagePath){
 		this.sprite.images.add(ImageLoader.loadImage(imagePath));
+	}
+	
+	public boolean isOutsideView(){
+		return x < -GameEngine.getCurrentScene().camera.x-GameEngine.stopRenderDistance || x > -GameEngine.getCurrentScene().camera.x+GameEngine.RENDERSIZE.width+GameEngine.stopRenderDistance || y < -GameEngine.getCurrentScene().camera.y-GameEngine.stopRenderDistance || y > -GameEngine.getCurrentScene().camera.y+GameEngine.RENDERSIZE.height+GameEngine.stopRenderDistance;
 	}
 
 }

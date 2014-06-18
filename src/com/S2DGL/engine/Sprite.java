@@ -10,8 +10,10 @@ public class Sprite {
 	public int spriteIndex = 0;
 	
 	public void next(){
-		if(spriteIndex < images.size()-1){
+		if(spriteIndex < images.size()){
 			spriteIndex += 1;
+		}else{
+			spriteIndex = 0;
 		}
 	}
 	
